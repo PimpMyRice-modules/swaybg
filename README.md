@@ -5,5 +5,5 @@
 ## Set up
 
 ```bash
-rice clone module pimp://swaybg
+pimp clone module pimp://swaybg
 ```
