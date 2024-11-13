@@ -1,6 +1,5 @@
+os: linux
 run:
-    # - if:
-    #   running: 'Hyprland'
     - shell: "swaybg -m {{wallpaper.mode}} -i '{{wallpaper.path}}' -c '{{term.color0}}' &"
     # kill all processes older than 3 seconds
     - shell: 'sleep 1 && pgrep swaybg -O 3 | xargs kill &'
