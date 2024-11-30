@@ -1,5 +1,11 @@
-os: linux
+# yaml-language-server: $schema=../../.json_schemas/module.json
+
+os:
+  - linux
 run:
-    - shell: "swaybg -m {{wallpaper.mode}} -i '{{wallpaper.path}}' -c '{{term.color0}}' &"
+  - action: shell
+    command:
+      swaybg -m {{wallpaper.mode}} -i '{{wallpaper.path}}' -c '{{normal.bg}}' &
+  - action: shell
     # kill all processes older than 3 seconds
-    - shell: 'sleep 1 && pgrep swaybg -O 3 | xargs kill &'
+    command: sleep 1 && pgrep swaybg -O 3 | xargs kill &
