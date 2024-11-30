@@ -4,8 +4,9 @@ os:
   - linux
 run:
   - action: shell
-    command:
-      swaybg -m {{wallpaper.mode}} -i '{{wallpaper.path}}' -c '{{normal.bg}}' &
+    command: swaybg -m {{wallpaper.mode}} -i '{{wallpaper.path}}' -c '{{normal.bg}}'
+    detached: true
   - action: shell
     # kill all processes older than 3 seconds
-    command: sleep 1 && pgrep swaybg -O 3 | xargs kill &
+    command: sleep 1 && pgrep swaybg -O 3 | xargs kill
+    detached: true
